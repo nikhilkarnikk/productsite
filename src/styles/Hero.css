@@ -1,0 +1,112 @@
+@import url('https://cdn.fontshare.com/wf/QWZNEQDA635JFXSW4ZZFBGFEXLPQRM3V/KTKBVYB2RQET7HFYFVFBXU7DNHK5JBQR/QWZNEQDA635JFXSW4ZZFBGFEXLPQRM3V.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-30px, 30px);
+  }
+  66% {
+    transform: translate(20px, -20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-40px, 20px);
+  }
+  66% {
+    transform: translate(40px, -30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes float3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(30px, 30px);
+  }
+  66% {
+    transform: translate(-20px, -20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.orb-1 {
+  animation: float 25s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orb-2 {
+  animation: float2 30s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orb-3 {
+  animation: float3 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-heading {
+  font-family: 'Aeonik', sans-serif;
+  letter-spacing: -0.03em;
+  font-feature-settings: "ss01" on, "ss02" on;
+}
+
+.logo-scroll-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  padding: 2rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.logo-scroll > div {
+  flex-shrink: 0;
+  padding: 0 2rem;
+}
+
+/* Remove gradient masks */
+.logo-scroll-container::before,
+.logo-scroll-container::after {
+  display: none;
+}
+
+/* Pause animation on hover */
+.logo-scroll:hover {
+  animation-play-state: paused;
+} 

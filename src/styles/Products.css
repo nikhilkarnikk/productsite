@@ -1,0 +1,92 @@
+/* Add any custom styles here */
+.logo-scroll-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  padding: 2rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.logo-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-scroll > div {
+  flex-shrink: 0;
+  padding: 0 2rem;
+}
+
+/* Chat interface styles */
+.chat-message {
+  max-width: 80%;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chat-message.user {
+  background-color: #3B82F6;
+  color: white;
+  margin-left: auto;
+}
+
+.chat-message.ai {
+  background-color: #F3F4F6;
+  color: #1F2937;
+  margin-right: auto;
+}
+
+/* File upload area styles */
+.file-upload-area {
+  border: 2px dashed #D1D5DB;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload-area.dragging {
+  border-color: #3B82F6;
+  background-color: #EFF6FF;
+}
+
+/* Order summary styles */
+.order-summary {
+  background-color: white;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+
+.order-total {
+  border-top: 1px solid #E5E7EB;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 

@@ -1,9 +1,37 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Hero.css';
 
 const Hero = () => {
   return (
     <div className="min-h-screen bg-[#F5F2EA]">
+      {/* Navigation */}
+      <nav className="px-6 py-4 max-w-7xl mx-auto">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center">
+            <img src="/images/logo.svg" alt="DeltaMetrics" className="h-8 w-8" />
+            <span className="ml-2 text-xl font-semibold">DeltaMetrics</span>
+          </div>
+          
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/products" className="text-gray-800 hover:text-gray-600">Products</Link>
+            <Link to="/solutions" className="text-gray-800 hover:text-gray-600">Solutions</Link>
+            <Link to="/company" className="text-gray-800 hover:text-gray-600">Company</Link>
+            <Link to="/docs" className="text-gray-800 hover:text-gray-600">Docs</Link>
+            <Link to="/pricing" className="text-gray-800 hover:text-gray-600">Pricing</Link>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <Link to="/login" className="text-gray-800 hover:text-gray-600">
+              Log In
+            </Link>
+            <Link to="/signup" className="px-4 py-2 text-white rounded-full bg-black hover:bg-gray-800">
+              Get Started
+            </Link>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section with Gradient Orbs */}
       <div className="relative overflow-hidden">
         {/* Background Orbs */}
@@ -20,33 +48,6 @@ const Hero = () => {
 
         {/* Content */}
         <div className="relative">
-          {/* Navigation */}
-          <nav className="px-6 py-4 max-w-7xl mx-auto">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <img src="/images/logo.svg" alt="Highnote" className="h-8 w-8" />
-                <span className="ml-2 text-xl font-semibold">Highnote</span>
-              </div>
-              
-              <div className="hidden md:flex items-center space-x-8">
-                <a href="#" className="text-gray-800 hover:text-gray-600">Products</a>
-                <a href="#" className="text-gray-800 hover:text-gray-600">Solutions</a>
-                <a href="#" className="text-gray-800 hover:text-gray-600">Company</a>
-                <a href="#" className="text-gray-800 hover:text-gray-600">Docs</a>
-                <a href="#" className="text-gray-800 hover:text-gray-600">Pricing</a>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <button className="px-4 py-2 text-gray-800 rounded-full bg-gray-100 hover:bg-gray-200">
-                  Log In
-                </button>
-                <button className="px-4 py-2 text-white rounded-full bg-black hover:bg-gray-800">
-                  Get Started
-                </button>
-              </div>
-            </div>
-          </nav>
-
           {/* Hero Content */}
           <div className="max-w-7xl mx-auto px-6 pt-20">
             <div className="text-center max-w-6xl mx-auto">

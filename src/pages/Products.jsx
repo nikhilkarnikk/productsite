@@ -8,7 +8,7 @@ console.log('Environment Variables:', {
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 const POLLING_INTERVAL = 1000; // Poll every second
-const WS_URL = import.meta.env.VITE_WS_URL || 'ws://3.138.33.220/ws/';
+const WS_URL = 'ws://localhost:8000/ws';
 const RECONNECT_INTERVAL = 5000;
 
 const extractRestaurantName = (filename) => {

@@ -9,14 +9,14 @@ const Hero = () => {
       <nav className="px-6 py-4 max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <img src="/images/logo.svg" alt="DeltaMetrics" className="h-8 w-8" />
-            <span className="ml-2 text-xl font-semibold">DeltaMetrics</span>
+            <img src="/images/rileyLogo.png" alt="Riley" className="h-10 w-auto" />
+            <span className="ml-2 text-2xl font-bold">Riley</span>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/products" className="text-gray-800 hover:text-gray-600">Products</Link>
-            <Link to="/solutions" className="text-gray-800 hover:text-gray-600">Solutions</Link>
-            <Link to="/company" className="text-gray-800 hover:text-gray-600">Company</Link>
+            <Link to="/features" className="text-gray-800 hover:text-gray-600">Features</Link>
+            <Link to="/about" className="text-gray-800 hover:text-gray-600">About</Link>
             <Link to="/docs" className="text-gray-800 hover:text-gray-600">Docs</Link>
             <Link to="/pricing" className="text-gray-800 hover:text-gray-600">Pricing</Link>
           </div>
@@ -34,45 +34,45 @@ const Hero = () => {
 
       {/* Hero Section with Gradient Orbs */}
       <div className="relative overflow-hidden">
-        {/* Background Orbs */}
-        <div className="absolute inset-0 overflow-hidden">
-          {/* Yellow Orb */}
-          <div className="orb-1 absolute left-[-10%] top-[15%] w-[800px] h-[800px] rounded-full bg-[#FFF200] opacity-95 blur-3xl"></div>
-          {/* Turquoise-Green Orb */}
-          <div className="orb-2 absolute left-[20%] top-[35%] w-[900px] h-[900px] rounded-full bg-[#00FF66] opacity-95 blur-3xl"></div>
-          {/* Light Blue Orb */}
-          <div className="orb-3 absolute right-[-10%] top-[15%] w-[800px] h-[800px] rounded-full bg-[#00FFFF] opacity-95 blur-3xl"></div>
-          {/* Distortion Overlay */}
-          <div className="absolute inset-0 bg-[#F5F2EA] opacity-20 mix-blend-overlay backdrop-blur-[120px]"></div>
+        {/* Background Orbs - bottom layer (z-0) */}
+        <div className="absolute inset-0 overflow-hidden z-0">
+          {/* Orange Orb */}
+          <div className="orb-1 absolute left-[0%] top-[15%] w-[600px] h-[600px] rounded-full bg-[#FF9900] opacity-95 blur-3xl"></div>
+          {/* Light Red Orb */}
+          <div className="orb-3 absolute right-[0%] top-[15%] w-[600px] h-[600px] rounded-full bg-[#FF6666] opacity-95 blur-3xl"></div>
+          {/* Yellow-Orange Orb - now on top of other orbs */}
+          <div className="orb-2 absolute left-[30%] top-[25%] w-[700px] h-[700px] rounded-full bg-[#FFCC00] opacity-95 blur-3xl"></div>
         </div>
+        
+        {/* Distortion Overlay - middle layer (z-10) */}
+        <div className="absolute inset-0 bg-[#F5F2EA] opacity-20 mix-blend-overlay backdrop-blur-[200px] z-10"></div>
 
-        {/* Content */}
-        <div className="relative">
+        {/* Content - top layer (z-20) */}
+        <div className="relative z-20">
           {/* Hero Content */}
           <div className="max-w-7xl mx-auto px-6 pt-20">
             <div className="text-center max-w-6xl mx-auto">
               <h1 className="hero-heading text-8xl font-normal mb-8 leading-[1.1]">
-                Revolutionizing Hospitality
+                Your Personal AI Assistant
                 <br />
-                with AI Automation
+                For Every Call
               </h1>
               <p className="text-2xl text-gray-700 mb-16 max-w-4xl mx-auto leading-relaxed">
-                We automate what slows you down — from AI-driven systems to custom software that elevates your operations and amplifies your brand identity.
+                Riley handles all your calls when you can't answer, filters spam, makes appointments for you, and acts on your behalf when you're busy.
               </p>
               <div className="flex justify-center space-x-4 mb-12">
                 <button className="px-8 py-4 text-white rounded-full bg-black hover:bg-gray-800 text-lg">
                   Get Started
                 </button>
                 <button className="px-8 py-4 text-gray-800 rounded-full bg-white hover:bg-gray-100 text-lg">
-                  Contact Sales
+                  See Demo
                 </button>
               </div>
 
-              {/* Partner Logos Section */}
+              {/* Partner Logos Section - COMMENTED OUT
               <div className="mb-20">
                 <div className="logo-scroll-container">
                   <div className="logo-scroll">
-                    {/* First set of logos */}
                     <div className="flex items-center">
                       <img src="/images/24hourfitness.png" alt="24 Hour Fitness" className="h-12" />
                       <img src="/images/hellbentlogo.png" alt="Hellbent" className="h-12 ml-20" />
@@ -84,7 +84,6 @@ const Hero = () => {
                       <img src="/images/omghospitality.png" alt="OMG Hospitality" className="h-12 ml-20" />
                       <img src="/images/rumarilogo.png" alt="Rumari" className="h-12 ml-20" />
                     </div>
-                    {/* Duplicate set of logos for seamless scrolling */}
                     <div className="flex items-center">
                       <img src="/images/24hourfitness.png" alt="24 Hour Fitness" className="h-12" />
                       <img src="/images/hellbentlogo.png" alt="Hellbent" className="h-12 ml-20" />
@@ -99,73 +98,118 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
+              */}
             </div>
 
             {/* Three Feature Cards */}
-            <div className="grid md:grid-cols-3 gap-6 mb-32">
-              {/* Issuing Card */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm">
-                <h3 className="text-2xl font-semibold mb-2">Restaurants & Hotels</h3>
+            <div className="grid md:grid-cols-3 gap-6 mb-16">
+              {/* Call Screening Card */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm flex flex-col h-full">
+                <h3 className="text-2xl font-semibold mb-2">Call Screening</h3>
                 <p className="text-gray-600 mb-8">
-                  Voice ordering, reservations, inventory & guest experience tools
+                  Automatically filters spam, scams, and telemarketers while routing important and personal calls directly to you
                 </p>
-                <div className="space-y-4">
-                  <img src="/images/card.png" alt="Credit Card" className="w-full" />
+                <div className="space-y-4 flex-grow flex flex-col">
+                  <div className="flex-grow flex justify-center items-center">
+                    <img src="/images/tab1.png" alt="Call Screening" className="w-full object-cover rounded-lg shadow-sm" />
+                  </div>
                   <div className="bg-gray-50/80 backdrop-blur-sm rounded-xl p-4 flex items-center">
                     <div className="w-8 h-8 bg-gray-200 rounded-full" />
                     <div className="ml-3 flex-1">
-                      <p className="font-medium">Shell Gas Station</p>
-                      <p className="text-gray-500 text-sm">Authorizing...</p>
+                      <p className="font-medium">Unknown Caller</p>
+                      <p className="text-gray-500 text-sm">Filtered Out</p>
                     </div>
-                    <span className="font-medium">$100.00</span>
+                    <span className="font-medium">Telemarketer</span>
                   </div>
                 </div>
               </div>
 
-              {/* Acquiring Card */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm">
-                <h3 className="text-2xl font-semibold mb-2">Music & Entertainment</h3>
+              {/* Task Handling Card */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm flex flex-col h-full">
+                <h3 className="text-2xl font-semibold mb-2">Task Handling</h3>
                 <p className="text-gray-600 mb-8">
-                  Artist apps, booking AI, label dashboards
+                  Handles tedious call systems, endures long hold times, and completes appointment scheduling and reservations so you never have to pick up the phone
                 </p>
-                <div className="space-y-4">
-                  <div className="bg-gray-50/80 backdrop-blur-sm rounded-xl p-4">
-                    <div className="flex items-center mb-4">
-                      <div className="w-12 h-12 bg-gray-200 rounded-lg" />
-                      <div className="ml-3">
-                        <p className="font-medium">Wood Chair</p>
-                        <p className="text-gray-500">Birch</p>
+                <div className="space-y-4 flex-grow flex flex-col">
+                  <div className="flex-grow">
+                    <div className="bg-gray-50/80 backdrop-blur-sm rounded-xl p-4 h-full">
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-gray-200 rounded-lg" />
+                        <div className="ml-3">
+                          <p className="font-medium">DMV Registration</p>
+                          <p className="text-gray-500">In Progress</p>
+                        </div>
+                        <span className="ml-auto font-medium">9:30 AM</span>
                       </div>
-                      <span className="ml-auto font-medium">$400.00</span>
-                    </div>
-                    <div className="space-y-4">
-                      <p className="font-medium">Card Information</p>
-                      <input type="text" placeholder="Number" className="w-full p-3 rounded-lg bg-white/80" />
-                      <div className="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="MM / YY" className="p-3 rounded-lg bg-white/80" />
-                        <input type="text" placeholder="CVV" className="p-3 rounded-lg bg-white/80" />
+                      <div className="space-y-4">
+                        <p className="font-medium">Reservation Confirmed</p>
+                        <div className="w-full p-3 rounded-lg bg-white/80">
+                          Italian Restaurant - Friday, 7:30 PM
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                          <div className="p-3 rounded-lg bg-white/80">Added to Calendar</div>
+                          <div className="p-3 rounded-lg bg-white/80">Reminder Set</div>
+                        </div>
+                        <button className="w-full p-3 bg-black/80 rounded-lg text-white">
+                          Approve
+                        </button>
                       </div>
-                      <button className="w-full p-3 bg-gray-100/80 rounded-lg text-gray-400">
-                        Pay
-                      </button>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Unified Payments Card */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm">
-                <h3 className="text-2xl font-semibold mb-2">Wellness & Clubs</h3>
-                <p className="text-gray-600">
-                  Scheduling agents, member apps, performance tracking
+              {/* Voice Commands Card */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-sm flex flex-col h-full">
+                <h3 className="text-2xl font-semibold mb-2">Voice Commands</h3>
+                <p className="text-gray-600 mb-8">
+                  Simply speak to Riley to schedule calls, set reminders, or handle tedious phone tasks
                 </p>
-                <div className="mt-8">
-                  <div className="w-full h-48 bg-gradient-to-br from-emerald-200 to-cyan-200 rounded-xl opacity-80"></div>
+                <div className="flex-grow flex flex-col justify-between">
+                  <div className="flex-grow relative rounded-xl overflow-hidden flex flex-col items-center justify-center">
+                    {/* Bowling pin style orb arrangement - bigger with more overlap */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="relative w-72 h-72">
+                        {/* Top Orb (Orange) */}
+                        <div className="absolute left-[50%] top-[35%] transform -translate-x-1/2 -translate-y-1/2 w-[180px] h-[180px] rounded-full bg-[#FF9900] opacity-70 blur-xl"></div>
+                        
+                        {/* Bottom Left Orb (Red) */}
+                        <div className="absolute left-[38%] top-[60%] transform -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] rounded-full bg-[#FF6666] opacity-70 blur-xl"></div>
+                        
+                        {/* Bottom Right Orb (Yellow) */}
+                        <div className="absolute left-[62%] top-[60%] transform -translate-x-1/2 -translate-y-1/2 w-[160px] h-[160px] rounded-full bg-[#FFCC00] opacity-70 blur-xl"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="relative z-10 flex flex-col items-center gap-8">
+                      {/* Simple microphone icon */}
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-16 h-16 text-gray-900">
+                        <path fillRule="evenodd" d="M8.25 4.5a3.75 3.75 0 117.5 0v8.25a3.75 3.75 0 11-7.5 0V4.5zm1.5 0a2.25 2.25 0 114.5 0v8.25a2.25 2.25 0 11-4.5 0V4.5z" clipRule="evenodd" />
+                        <path d="M6 10.5a.75.75 0 01.75.75v1.5a5.25 5.25 0 1010.5 0v-1.5a.75.75 0 011.5 0v1.5a6.751 6.751 0 01-6 6.709v2.291h3a.75.75 0 010 1.5h-7.5a.75.75 0 010-1.5h3v-2.291a6.751 6.751 0 01-6-6.709v-1.5A.75.75 0 016 10.5z" />
+                      </svg>
+                      
+                      {/* Sample command text */}
+                      <div className="text-center text-sm text-gray-700 max-w-xs italic">
+                        "Hey Riley, schedule a follow up visit with my dentist in 6 months and find and book a dinner reservation for my wife and I this Friday - preferably Italian"
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+
+            {/* Powerful taglines - similar to example site */}
+            <div className="text-center mb-32">
+              <h2 className="text-xl font-normal text-gray-800">Reclaiming your time from tedious phone calls.</h2>
+              <h2 className="text-xl font-bold text-gray-800">From busy professionals to anyone who values their peace of mind.</h2>
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* Thin grey horizontal separator line */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="border-t border-gray-300 w-full"></div>
       </div>
 
       {/* Additional Sections with Light Background */}
@@ -174,26 +218,26 @@ const Hero = () => {
           {/* Purpose Built Section */}
           <div className="text-center max-w-4xl mx-auto py-32">
             <h2 className="text-6xl font-normal mb-6">
-              A Purpose Built
+              The AI Secretary
               <br />
-              Payments Platform
+              For Everyone
             </h2>
             <p className="text-xl text-gray-700 mb-2">
-              Built for innovators seeking a better payments solution.
+              From busy professionals to everyday people who hate dealing with phone calls.
             </p>
             <p className="text-xl text-gray-700">
-              Highnote helps reduce costs, drive revenue, and optimize
+              Riley helps you reclaim your time, avoid frustrating wait times,
               <br />
-              your business for success.
+              and never miss important communications.
             </p>
           </div>
 
-          {/* Complete Payment Solution Section */}
+          {/* Complete Solution Section */}
           <div className="mb-32">
             <div className="max-w-2xl mb-16">
-              <h2 className="text-3xl font-semibold mb-4">Complete Payment Solution</h2>
+              <h2 className="text-3xl font-semibold mb-4">Your Personal Call Agent</h2>
               <p className="text-xl text-gray-700">
-                Highnote's fully integrated platform is built to handle your payment needs seamlessly, whether you need to issue cards, accept payments, or move money more efficiently.
+                Riley's AI-powered platform handles those annoying phone calls you hate making – whether it's calling credit card companies, scheduling appointments, or dealing with the DMV.
               </p>
             </div>
 
@@ -204,45 +248,45 @@ const Hero = () => {
               </div>
               <div className="space-y-8">
                 <div className="bg-white rounded-3xl p-8 shadow-sm">
-                  <h3 className="text-2xl font-semibold mb-4">Unified Ledgers</h3>
+                  <h3 className="text-2xl font-semibold mb-4">Multi-Task Commands</h3>
                   <p className="text-gray-600 mb-8">
-                    Our API driven ledger provides full visibility into all funds movements across your product with detailed tracking of all activity.
+                    Give Riley multiple instructions in one go, and let your secretary handle everything for you.
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                       <div className="flex items-center">
-                        <img src="/images/airbnb.svg" alt="Airbnb" className="h-8 w-8 mr-3" />
+                        <img src="/images/airbnb.svg" alt="DMV" className="h-8 w-8 mr-3" />
                         <div>
-                          <p className="font-medium">Airbnb</p>
+                          <p className="font-medium">License Renewal</p>
                           <p className="text-gray-500 text-sm">Completed</p>
                         </div>
                       </div>
-                      <span className="font-medium">$820.34</span>
+                      <span className="font-medium">9:30 AM</span>
                     </div>
                     <div className="space-y-2">
                       <div className="flex justify-between py-2">
-                        <span>Cash</span>
-                        <span className="font-medium">$1,022,412.47</span>
+                        <span>Call Tasks</span>
+                        <span className="font-medium">4/5 Complete</span>
                       </div>
                       <div className="flex justify-between py-2">
-                        <span>Available Cash</span>
-                        <span className="font-medium">$778,262.74</span>
+                        <span>Reservations Made</span>
+                        <span className="font-medium">3 This Week</span>
                       </div>
                       <div className="flex justify-between py-2">
-                        <span>Fund in Hold</span>
-                        <span className="font-medium">$0.00</span>
+                        <span>Unwanted Calls Blocked</span>
+                        <span className="font-medium">12 Today</span>
                       </div>
                       <div className="flex justify-between py-2">
-                        <span>Authorization</span>
-                        <span className="font-medium">$243,029.39</span>
+                        <span>Priority Tasks</span>
+                        <span className="font-medium">2 Pending</span>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div className="bg-white rounded-3xl p-8 shadow-sm">
-                  <h3 className="text-2xl font-semibold mb-4">Rich Transaction Detail</h3>
+                  <h3 className="text-2xl font-semibold mb-4">Morning Briefing</h3>
                   <p className="text-gray-600">
-                    Receive detailed transaction payloads directly from the card networks that empower you to write advanced logic around authorization approvals.
+                    One command to start your day: "Call my client, set up dinner at 7, check my credit card statement, and call Mom at noon."
                   </p>
                 </div>
               </div>
@@ -257,9 +301,9 @@ const Hero = () => {
                   <path d="M9 3H5C3.89543 3 3 3.89543 3 5V9M9 21H5C3.89543 21 3 20.1046 3 19V15M21 9V5C21 3.89543 20.1046 3 19 3H15M21 15V19C21 20.1046 20.1046 21 19 21H15" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Flexible Account Structures</h3>
+              <h3 className="text-xl font-semibold mb-2">Mobile & Desktop Apps</h3>
               <p className="text-gray-600">
-                Our platform was designed to work with any business type and model, supporting your unique needs.
+                Access Riley from any device with our seamless cross-platform experience.
               </p>
             </div>
             <div>
@@ -268,9 +312,9 @@ const Hero = () => {
                   <path d="M12 4V20M20 12H4" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Full Program Management</h3>
+              <h3 className="text-xl font-semibold mb-2">Call Forwarding</h3>
               <p className="text-gray-600">
-                We are with you every step of the way, from implementation to ongoing program optimization.
+                Seamlessly route calls to Riley when you're busy or to you when it's important.
               </p>
             </div>
             <div>
@@ -279,9 +323,9 @@ const Hero = () => {
                   <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">World-Class Dashboard</h3>
+              <h3 className="text-xl font-semibold mb-2">Phone Widget</h3>
               <p className="text-gray-600">
-                Streamline your operations and support your customers from Highnote's user-friendly Dashboard.
+                Quick access to Riley with a simple swipe on your phone screen.
               </p>
             </div>
             <div>
@@ -290,9 +334,9 @@ const Hero = () => {
                   <path d="M13 10V3L4 14H11V21L20 10H13Z" stroke="currentColor" strokeWidth="2"/>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Designed for Scale</h3>
+              <h3 className="text-xl font-semibold mb-2">Smart Learning</h3>
               <p className="text-gray-600">
-                Our secure platform scales with you and is trusted by developers, startups, and large corporations.
+                Riley learns your preferences and adapts to your specific needs over time.
               </p>
             </div>
           </div>
@@ -300,22 +344,22 @@ const Hero = () => {
           {/* Modern Stack Section */}
           <div className="bg-black text-white rounded-3xl p-16 mb-32">
             <h2 className="text-5xl font-normal mb-6">
-              A Modern Stack for
+              Reclaim Your Time
               <br />
-              Modern Companies
+              With Riley
             </h2>
             <p className="text-xl text-gray-400 mb-16">
-              Highnote's API enables your team to bring your payment product to
+              Let Riley handle those time-consuming phone calls
               <br />
-              market faster with modern tools and comprehensive documentation.
+              while you focus on what really matters.
             </p>
 
             <div className="flex justify-between gap-8">
               <button className="px-6 py-3 bg-white text-black rounded-full hover:bg-gray-100">
-                Start Building
+                Join Waitlist
               </button>
               <button className="px-6 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-700">
-                Read Docs
+                See How It Works
               </button>
             </div>
 
@@ -327,9 +371,9 @@ const Hero = () => {
                     <path d="M12 4v16m8-8H4" stroke="currentColor" strokeWidth="2"/>
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">GraphQL API</h3>
+                <h3 className="text-xl font-semibold mb-3">Natural Conversations</h3>
                 <p className="text-gray-400">
-                  Rapidly build flexible, production-ready integrations with Highnote's GraphQL API.
+                  Riley sounds human and handles complex conversations with ease.
                 </p>
               </div>
               <div>
@@ -338,9 +382,9 @@ const Hero = () => {
                     <path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke="currentColor" strokeWidth="2"/>
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Notifications & Webhooks</h3>
+                <h3 className="text-xl font-semibold mb-3">Custom Notifications</h3>
                 <p className="text-gray-400">
-                  Supercharge your customer interactions and experiences with our dynamic notification and webhook system.
+                  Set alerts for important updates and completed tasks on your terms.
                 </p>
               </div>
               <div>
@@ -349,9 +393,9 @@ const Hero = () => {
                     <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="currentColor" strokeWidth="2"/>
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Easy-to-Use SDKs</h3>
+                <h3 className="text-xl font-semibold mb-3">Simple Setup</h3>
                 <p className="text-gray-400">
-                  Integrate complex flows easily by using our SDKs to stay compliant and simplify workflows.
+                  Get started in minutes with our easy onboarding process.
                 </p>
               </div>
               <div>
@@ -360,9 +404,9 @@ const Hero = () => {
                     <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7a4 4 0 00-8 0v4h8z" stroke="currentColor" strokeWidth="2"/>
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold mb-3">Enterprise-Ready Security</h3>
+                <h3 className="text-xl font-semibold mb-3">Privacy First</h3>
                 <p className="text-gray-400">
-                  Highnote's platform offers best-in-class security and compliance practices for businesses of all sizes.
+                  Your calls and data are protected with enterprise-grade security.
                 </p>
               </div>
             </div>
@@ -372,63 +416,60 @@ const Hero = () => {
           <div className="grid grid-cols-3 gap-8 mb-32">
             <div className="space-y-6">
               <p className="text-xl leading-relaxed">
-                "Every single person we worked with was just a total rock star. In fact, without being asked, the head of our engineering team told me that the Highnote API was the best he had seen from every single vendor we dealt with."
+                "Riley has been a game-changer for me. It handles all those annoying calls I used to dread making. Now I just tell Riley what I need and it gets done while I focus on more important things."
               </p>
               <div className="flex items-center">
-                <img src="/images/maurice.jpg" alt="Maurice Herary" className="w-12 h-12 rounded-full mr-4" />
+                <img src="/images/maurice.jpg" alt="Alex Johnson" className="w-12 h-12 rounded-full mr-4" />
                 <div>
-                  <p className="font-semibold">Maurice Herary</p>
-                  <p className="text-gray-600">CEO</p>
+                  <p className="font-semibold">Alex Johnson</p>
+                  <p className="text-gray-600">Marketing Director</p>
                 </div>
               </div>
-              <img src="/images/fluz.svg" alt="Fluz" className="h-8" />
             </div>
             <div className="space-y-6">
               <p className="text-xl leading-relaxed">
-                "Highnote's infrastructure for money movement across financial accounts made it a perfect fit for this stage of our growth. We've been amazed by the flexibility with which Highnote operates."
+                "I used to waste hours on hold with various companies. Riley has given me those hours back. My favorite feature is setting up multiple tasks at once and having them all handled automatically."
               </p>
               <div className="flex items-center">
-                <img src="/images/trista.jpg" alt="Trista Kempa" className="w-12 h-12 rounded-full mr-4" />
+                <img src="/images/trista.jpg" alt="Sarah Chen" className="w-12 h-12 rounded-full mr-4" />
                 <div>
-                  <p className="font-semibold">Trista Kempa</p>
-                  <p className="text-gray-600">COO</p>
+                  <p className="font-semibold">Sarah Chen</p>
+                  <p className="text-gray-600">Small Business Owner</p>
                 </div>
               </div>
-              <img src="/images/ferry.svg" alt="Ferry" className="h-8" />
             </div>
             <div className="space-y-6">
               <p className="text-xl leading-relaxed">
-                "Highnote's developer-friendly APIs represent a departure from legacy providers which often have bulky, complex processes and lack the ability to customize and scale at the velocity GiveCard's customers need. With Highnote as a partner, we are well-positioned to execute on our vision."
+                "As someone who hates making phone calls, Riley is the perfect solution. It makes restaurant reservations, handles my DMV renewals, and even calls to check on my elderly parents when I'm busy."
               </p>
               <div className="flex items-center">
-                <img src="/images/lurein.jpg" alt="Lurein Perera" className="w-12 h-12 rounded-full mr-4" />
+                <img src="/images/lurein.jpg" alt="Michael Torres" className="w-12 h-12 rounded-full mr-4" />
                 <div>
-                  <p className="font-semibold">Lurein Perera</p>
-                  <p className="text-gray-600">CEO</p>
+                  <p className="font-semibold">Michael Torres</p>
+                  <p className="text-gray-600">Software Engineer</p>
                 </div>
               </div>
-              <img src="/images/givecard.svg" alt="GiveCard" className="h-8" />
             </div>
           </div>
 
           {/* Launch and Migrate Section */}
           <div className="grid grid-cols-2 gap-8 mb-32">
             <div className="bg-gradient-to-br from-yellow-300 to-green-300 rounded-3xl p-16">
-              <h3 className="text-5xl mb-6">Launch Your Program</h3>
+              <h3 className="text-5xl mb-6">Get Early Access</h3>
               <p className="text-xl mb-8">
-                Start from scratch? We'll help you plan, design, and build.
+                Be among the first to try Riley and save hours every week.
               </p>
               <button className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800">
-                Launch Your Program
+                Join Waitlist
               </button>
             </div>
             <div className="bg-gradient-to-br from-green-300 to-cyan-300 rounded-3xl p-16">
-              <h3 className="text-5xl mb-6">Upgrade Your Stack</h3>
+              <h3 className="text-5xl mb-6">For Businesses</h3>
               <p className="text-xl mb-8">
-                Already have something? We'll optimize, automate, and modernize.
+                Team solution coming soon. Multiply productivity across your organization.
               </p>
               <button className="px-6 py-3 bg-black text-white rounded-full hover:bg-gray-800">
-                Upgrade Your Stack
+                Learn More
               </button>
             </div>
           </div>
@@ -440,15 +481,15 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-5 gap-8 mb-16">
             <div>
-              <img src="/images/logo-white.svg" alt="Highnote" className="h-8 mb-4" />
+              <img src="/images/logo-white.svg" alt="Riley" className="h-8 mb-4" />
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Products</h4>
+              <h4 className="font-semibold mb-4">Product</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white">Issuing</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white">Acquiring</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white">Unified Payments</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white">Credit</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Features</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Mobile App</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Desktop App</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Integrations</a></li>
               </ul>
             </div>
             <div>
@@ -469,17 +510,17 @@ const Hero = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Developers</h4>
+              <h4 className="font-semibold mb-4">Connect</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white">Documentation</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white">API Reference</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white">Changelog</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white">Status</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Twitter</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">LinkedIn</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Instagram</a></li>
+                <li><a href="#" className="text-gray-400 hover:text-white">Contact</a></li>
               </ul>
             </div>
           </div>
           <div className="text-center text-gray-400">
-            © 2024 Highnote Platform
+            © 2024 Riley AI
           </div>
         </div>
       </footer>
